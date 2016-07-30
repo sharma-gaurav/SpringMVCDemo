@@ -10,9 +10,9 @@ import org.springframework.validation.DataBinder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.validation.Valid;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Map;
 
 @RequestMapping("/student")
 @Controller
@@ -48,7 +48,7 @@ public class StudentController {
     }
 
     @RequestMapping(value = "/save")
-    ModelAndView save(@ModelAttribute("student") StudentCO studentCO, BindingResult bindingResult) {
+    ModelAndView save(@ModelAttribute("student") @Valid StudentCO studentCO, BindingResult bindingResult) {
         ModelAndView modelAndView;
         if (bindingResult.hasErrors()) {
             modelAndView = new ModelAndView("student/create");

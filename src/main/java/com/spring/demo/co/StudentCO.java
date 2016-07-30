@@ -1,16 +1,37 @@
 package com.spring.demo.co;
 
-import org.springframework.format.annotation.DateTimeFormat;
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotEmpty;
+
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 import java.util.Date;
 import java.util.List;
 
 public class StudentCO {
+
+    @NotEmpty(message = "First Name should not be blank")
+    @Size(min = 2, max = 20, message = "Size must be between 2 to 20")
     String firstName;
+
+    @NotEmpty(message = "Last Name should not be blank")
+    @Size(min = 2, max = 20, message = "Size must be between 2 to 20")
     String lastName;
+
+    @Email(message = "Please provide valid Email Address")
+    String email;
+
+    @NotNull(message = "Please provide Phone Number")
     Long phoneNumber;
+
+    @NotEmpty(message = "You should have one subject assigned.")
     List<String> subjects;
+
+    @NotNull(message = "Please provide your DOB")
     Date dateOfBirth;
+
+    @NotNull(message = "Please provide address")
     AddressCO address;
 
     public String getFirstName() {
@@ -59,5 +80,13 @@ public class StudentCO {
 
     public void setAddress(AddressCO address) {
         this.address = address;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }

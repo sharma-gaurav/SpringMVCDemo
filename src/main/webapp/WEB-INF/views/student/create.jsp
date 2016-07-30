@@ -11,6 +11,7 @@ ${heading}<br/>
     <label>First Name : </label><input type="text" name="firstName"><br/>
     <label>Last Name : </label><input type="text" name="lastName"> <br/>
     <label>Phone Number : </label><input type="text" name="phoneNumber"> <br/>
+    <label>Email : </label><input type="text" name="email"> <br/>
     <label>Subjects : </label>
     <input type="checkbox" name="subjects" value="Math"> Math&nbsp;&nbsp;
     <input type="checkbox" name="subjects" value="English"> English&nbsp;&nbsp;
