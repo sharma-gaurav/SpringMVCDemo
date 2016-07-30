@@ -2,8 +2,7 @@ package com.spring.demo.controller;
 
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 @RequestMapping("/student")
@@ -25,6 +24,13 @@ public class StudentController {
     ModelAndView greet() {
         ModelAndView modelAndView = new ModelAndView("greet");
         modelAndView.addObject("greeting", "Hello World");
+        return modelAndView;
+    }
+
+    @RequestMapping(value = "/save/{firstName}/{lastName}")
+    ModelAndView save(@PathVariable("firstName") String firstName, @PathVariable("lastName") String lastName) {
+        ModelAndView modelAndView = new ModelAndView("student/show");
+        modelAndView.addObject("name", firstName + " " + lastName);
         return modelAndView;
     }
 }
