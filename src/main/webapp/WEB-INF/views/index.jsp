@@ -11,6 +11,6 @@
     <title>Hello World</title>
 </head>
 <body>
-<strong>I am strong</strong>
+<strong>Hello from index.gsp</strong>
 </body>
 </html>

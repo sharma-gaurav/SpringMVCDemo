@@ -16,10 +16,8 @@
     <!--<context:component-scan base-package="com.spring.demo.controller"/>-->
     <!--<mvc:annotation-driven/>-->
 
-    <!--<bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"/>-->
-
-    <bean class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping"/>
-    <bean class="com.spring.demo.PersonController"></bean>
+    <bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"/>
+    <bean name="/index.html" class="com.spring.demo.controller.StudentController"/>
 
     <bean id="viewResolver"
           class="org.springframework.web.servlet.view.InternalResourceViewResolver">
