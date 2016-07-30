@@ -22,7 +22,6 @@ public class StudentController {
     void init(DataBinder dataBinder) {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM-dd-yyyy");
         dataBinder.registerCustomEditor(Date.class, "dateOfBirth", new CustomDateEditor(simpleDateFormat, true));
-        dataBinder.setDisallowedFields(new String[] {"firstName"});
     }
 
     @RequestMapping("/")
