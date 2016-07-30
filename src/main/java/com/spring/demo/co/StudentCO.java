@@ -22,16 +22,16 @@ public class StudentCO {
     @Email(message = "Please provide valid Email Address")
     String email;
 
-    @NotNull(message = "Please provide Phone Number")
+    @NotNull
     Long phoneNumber;
 
     @NotEmpty(message = "You should have one subject assigned.")
     List<String> subjects;
 
-    @NotNull(message = "Please provide your DOB")
+    @NotNull
     Date dateOfBirth;
 
-    @NotNull(message = "Please provide address")
+    @NotNull
     AddressCO address;
 
     public String getFirstName() {
