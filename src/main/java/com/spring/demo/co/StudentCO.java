@@ -1,5 +1,6 @@
 package com.spring.demo.co;
 
+import com.spring.demo.validators.IsHobbyValid;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 
@@ -33,6 +34,9 @@ public class StudentCO {
 
     @NotNull
     AddressCO address;
+
+    @IsHobbyValid
+    String hobby;
 
     public String getFirstName() {
         return firstName;
@@ -88,5 +92,13 @@ public class StudentCO {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getHobby() {
+        return hobby;
+    }
+
+    public void setHobby(String hobby) {
+        this.hobby = hobby;
     }
 }
