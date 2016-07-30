@@ -29,8 +29,13 @@ public class StudentController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "/save/{firstName}/{lastName}")
-    ModelAndView save(@PathVariable Map<String, String> requestMap) {
+    @RequestMapping("/create")
+    ModelAndView create() {
+        return new ModelAndView("student/create");
+    }
+
+    @RequestMapping(value = "/save")
+    ModelAndView save(@RequestParam Map<String, String> requestMap) {
         ModelAndView modelAndView = new ModelAndView("student/show");
         modelAndView.addObject("name", requestMap.get("firstName") + " " + requestMap.get("lastName"));
         return modelAndView;
