@@ -4,6 +4,7 @@ package com.spring.demo.controller;
 import com.spring.demo.co.StudentCO;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -37,8 +38,14 @@ public class StudentController {
     }
 
     @RequestMapping(value = "/save")
-    ModelAndView save(@ModelAttribute("student") StudentCO studentCO) {
-        return new ModelAndView("student/show");
+    ModelAndView save(@ModelAttribute("student") StudentCO studentCO, BindingResult bindingResult) {
+        ModelAndView modelAndView;
+        if(bindingResult.hasErrors()) {
+            modelAndView = new ModelAndView("student/create");
+        } else {
+            modelAndView = new ModelAndView("student/show");
+        }
+        return modelAndView;
     }
 
     @ModelAttribute

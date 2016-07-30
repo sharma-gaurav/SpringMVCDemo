@@ -6,6 +6,9 @@
 <body>
     ${heading}<br/>
     <br/>
-    How are you ${student.getFirstName()} ${student.getLastName()}?
+    Name :  ${student.firstName} ${student.lastName} <br/>
+    Phone : ${student.phoneNumber} <br/>
+    DOB : ${student.dateOfBirth} <br/>
+    Subjects : ${student.subjects} <br/>
 </body>
 </html>
