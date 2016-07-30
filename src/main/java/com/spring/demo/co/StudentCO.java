@@ -10,8 +10,8 @@ public class StudentCO {
     String lastName;
     Long phoneNumber;
     List<String> subjects;
-    @DateTimeFormat(pattern = "MM-dd-yyyy")
     Date dateOfBirth;
+    AddressCO address;
 
     public String getFirstName() {
         return firstName;
@@ -51,5 +51,13 @@ public class StudentCO {
 
     public void setDateOfBirth(Date dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
+    }
+
+    public AddressCO getAddress() {
+        return address;
+    }
+
+    public void setAddress(AddressCO address) {
+        this.address = address;
     }
 }

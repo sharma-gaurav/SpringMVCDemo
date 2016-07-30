@@ -16,6 +16,10 @@ ${heading}<br/>
     <input type="checkbox" name="subjects" value="English"> English&nbsp;&nbsp;
     <input type="checkbox" name="subjects" value="Hindi"> Hindi<br/>
     <label>DOB : </label><input type="text" name="dateOfBirth"> <br/>
+    Address: <br/>
+    <label>City : </label><input type="text" name="address.city"> <br/>
+    <label>State : </label><input type="text" name="address.state"> <br/>
+    <label>Country : </label><input type="text" name="address.country"> <br/>
     <button type="submit" value="Save">Save</button>
 </form>
 

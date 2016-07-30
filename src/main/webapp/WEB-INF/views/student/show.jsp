@@ -10,5 +10,6 @@
     Phone : ${student.phoneNumber} <br/>
     DOB : ${student.dateOfBirth} <br/>
     Subjects : ${student.subjects} <br/>
+    Address : ${student.address.city}, ${student.address.state}, ${student.address.country}
 </body>
 </html>
