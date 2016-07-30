@@ -5,6 +5,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.Map;
+
 @RequestMapping("/student")
 @Controller
 public class StudentController {
@@ -28,9 +30,9 @@ public class StudentController {
     }
 
     @RequestMapping(value = "/save/{firstName}/{lastName}")
-    ModelAndView save(@PathVariable("firstName") String firstName, @PathVariable("lastName") String lastName) {
+    ModelAndView save(@PathVariable Map<String, String> requestMap) {
         ModelAndView modelAndView = new ModelAndView("student/show");
-        modelAndView.addObject("name", firstName + " " + lastName);
+        modelAndView.addObject("name", requestMap.get("firstName") + " " + requestMap.get("lastName"));
         return modelAndView;
     }
 }
