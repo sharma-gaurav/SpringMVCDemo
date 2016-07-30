@@ -4,6 +4,6 @@
     <title>Show Student</title>
 </head>
 <body>
-    Welcome ${name}
+    Welcome ${student.getFirstName()} ${student.getLastName()}
 </body>
 </html>

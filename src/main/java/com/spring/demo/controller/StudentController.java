@@ -36,9 +36,7 @@ public class StudentController {
     }
 
     @RequestMapping(value = "/save")
-    ModelAndView save(StudentCO studentCO) {
-        ModelAndView modelAndView = new ModelAndView("student/show");
-        modelAndView.addObject("name", studentCO.getFirstName() + " " + studentCO.getLastName());
-        return modelAndView;
+    ModelAndView save(@ModelAttribute("student") StudentCO studentCO) {
+        return new ModelAndView("student/show");
     }
 }
