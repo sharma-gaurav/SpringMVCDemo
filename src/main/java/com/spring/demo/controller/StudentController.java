@@ -1,19 +1,16 @@
 package com.spring.demo.controller;
 
 
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.mvc.multiaction.MultiActionController;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+@RequestMapping("/student")
+@Controller
+public class StudentController {
 
-public class StudentController extends MultiActionController {
-    public ModelAndView action1(HttpServletRequest request, HttpServletResponse response) {
+    @RequestMapping("/")
+    ModelAndView index() {
         return new ModelAndView("index");
-    }
-
-    public void action2(HttpServletRequest request, HttpServletResponse response) throws Exception {
-        response.setContentType("text/html");
-        response.getWriter().write("This is html content");
     }
 }
