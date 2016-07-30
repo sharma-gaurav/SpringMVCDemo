@@ -1,6 +1,7 @@
 package com.spring.demo.controller;
 
 
+import com.spring.demo.co.StudentCO;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
@@ -35,9 +36,9 @@ public class StudentController {
     }
 
     @RequestMapping(value = "/save")
-    ModelAndView save(@RequestParam Map<String, String> requestMap) {
+    ModelAndView save(StudentCO studentCO) {
         ModelAndView modelAndView = new ModelAndView("student/show");
-        modelAndView.addObject("name", requestMap.get("firstName") + " " + requestMap.get("lastName"));
+        modelAndView.addObject("name", studentCO.getFirstName() + " " + studentCO.getLastName());
         return modelAndView;
     }
 }
