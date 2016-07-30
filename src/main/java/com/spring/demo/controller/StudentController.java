@@ -3,6 +3,7 @@ package com.spring.demo.controller;
 
 import com.spring.demo.co.StudentCO;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -38,5 +39,10 @@ public class StudentController {
     @RequestMapping(value = "/save")
     ModelAndView save(@ModelAttribute("student") StudentCO studentCO) {
         return new ModelAndView("student/show");
+    }
+
+    @ModelAttribute
+    void commonProperties(Model model) {
+        model.addAttribute("heading", "Welcome to Spring MVC!");
     }
 }

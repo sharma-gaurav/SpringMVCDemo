@@ -4,6 +4,8 @@
     <title>Show Student</title>
 </head>
 <body>
-    Welcome ${student.getFirstName()} ${student.getLastName()}
+    ${heading}<br/>
+    <br/>
+    How are you ${student.getFirstName()} ${student.getLastName()}?
 </body>
 </html>

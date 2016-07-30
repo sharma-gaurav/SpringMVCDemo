@@ -4,6 +4,7 @@
     <title>Create a Student</title>
 </head>
 <body>
+${heading}<br/>
 <form action="/student/save">
     <label>First Name : </label><input type="text" name="firstName"><br/>
     <label>Last Name : </label><input type="text" name="lastName"> <br/>
